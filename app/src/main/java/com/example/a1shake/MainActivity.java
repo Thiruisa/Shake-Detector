@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements SensorEventListener{
     private SensorManager sensorManager;
@@ -44,7 +45,10 @@ public class MainActivity extends Activity implements SensorEventListener{
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 onResume();
+                Toast.makeText(getApplicationContext(), "Start", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -53,6 +57,8 @@ public class MainActivity extends Activity implements SensorEventListener{
             @Override
             public void onClick(View view) {
                 onPause();
+                Toast.makeText(getApplicationContext(), "Paused", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -132,10 +138,10 @@ public class MainActivity extends Activity implements SensorEventListener{
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    @Override
-    protected void onPause() {
-        // unregister listener
-        super.onPause();
-        sensorManager.unregisterListener(this);
-    }
+        @Override
+        protected void onPause() {
+            // unregister listener
+            super.onPause();
+            sensorManager.unregisterListener(this);
+        }
 }

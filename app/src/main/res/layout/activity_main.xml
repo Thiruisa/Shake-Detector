@@ -14,7 +14,9 @@
         android:text="Shake Detection"
         android:textStyle="bold"
         android:visibility="visible"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
     <TextView
         android:layout_width="wrap_content"
